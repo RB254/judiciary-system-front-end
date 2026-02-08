@@ -1,0 +1,199 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* NASSA Court Judiciary Filing System - Design System
+   Professional judiciary aesthetic with Kenyan heritage colors
+   All colors in HSL format */
+
+@layer base {
+  :root {
+    /* Core palette - Professional judiciary blues with gold accents */
+    --background: 210 33% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    /* Primary - Deep Navy Blue (Trust & Authority) */
+    --primary: 222 47% 20%;
+    --primary-foreground: 210 40% 98%;
+
+    /* Secondary - Gold/Amber (Kenyan Heritage) */
+    --secondary: 43 96% 56%;
+    --secondary-foreground: 222 47% 11%;
+
+    /* Muted backgrounds */
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    /* Accent - Emerald Green (Kenyan Flag) */
+    --accent: 160 84% 24%;
+    --accent-foreground: 210 40% 98%;
+
+    /* Destructive states */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Borders and inputs */
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 222 47% 20%;
+
+    --radius: 0.625rem;
+
+    /* Custom tokens for judiciary theme */
+    --judiciary-navy: 222 47% 20%;
+    --judiciary-navy-light: 222 35% 35%;
+    --judiciary-gold: 43 96% 56%;
+    --judiciary-gold-dark: 38 90% 45%;
+    --judiciary-emerald: 160 84% 24%;
+    --judiciary-emerald-light: 160 50% 40%;
+    --judiciary-slate: 215 16% 47%;
+    --judiciary-cream: 45 30% 96%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(222 47% 20%) 0%, hsl(222 35% 35%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(43 96% 56%) 0%, hsl(38 90% 45%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(210 33% 98%) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(222 47% 11% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(222 47% 11% / 0.1), 0 2px 4px -2px hsl(222 47% 11% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(222 47% 11% / 0.1), 0 4px 6px -4px hsl(222 47% 11% / 0.1);
+    --shadow-xl: 0 20px 25px -5px hsl(222 47% 11% / 0.1), 0 8px 10px -6px hsl(222 47% 11% / 0.1);
+    --shadow-gold: 0 4px 14px 0 hsl(43 96% 56% / 0.25);
+
+    /* Sidebar */
+    --sidebar-background: 222 47% 20%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 43 96% 56%;
+    --sidebar-primary-foreground: 222 47% 11%;
+    --sidebar-accent: 222 35% 28%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 222 35% 28%;
+    --sidebar-ring: 43 96% 56%;
+  }
+
+  .dark {
+    --background: 222 47% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 12%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 12%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 43 96% 56%;
+    --primary-foreground: 222 47% 11%;
+
+    --secondary: 222 35% 25%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 222 35% 18%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 160 84% 24%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 222 35% 22%;
+    --input: 222 35% 22%;
+    --ring: 43 96% 56%;
+
+    --sidebar-background: 222 47% 8%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 43 96% 56%;
+    --sidebar-primary-foreground: 222 47% 11%;
+    --sidebar-accent: 222 35% 18%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 222 35% 18%;
+    --sidebar-ring: 43 96% 56%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight text-foreground;
+  }
+}
+
+@layer components {
+  /* Hero gradient background */
+  .bg-hero-gradient {
+    background: var(--gradient-hero);
+  }
+
+  /* Gold gradient for CTAs */
+  .bg-gold-gradient {
+    background: var(--gradient-gold);
+  }
+
+  /* Card with subtle gradient */
+  .card-gradient {
+    background: var(--gradient-card);
+  }
+
+  /* Judiciary shadows */
+  .shadow-judiciary {
+    box-shadow: var(--shadow-lg);
+  }
+
+  .shadow-gold {
+    box-shadow: var(--shadow-gold);
+  }
+
+  /* Status badges */
+  .badge-pending {
+    @apply bg-amber-100 text-amber-800 border-amber-200;
+  }
+
+  .badge-approved {
+    @apply bg-emerald-100 text-emerald-800 border-emerald-200;
+  }
+
+  .badge-rejected {
+    @apply bg-red-100 text-red-800 border-red-200;
+  }
+
+  .badge-processing {
+    @apply bg-blue-100 text-blue-800 border-blue-200;
+  }
+
+  /* Glass effect for modern cards */
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-sm border border-white/20;
+  }
+}
+
+@layer utilities {
+  /* Text balance for headings */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Smooth scroll */
+  .scroll-smooth {
+    scroll-behavior: smooth;
+  }
+
+  /* Focus ring style */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2;
+  }
+}
